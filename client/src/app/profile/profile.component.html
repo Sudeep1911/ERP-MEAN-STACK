@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<br><br>
+<div *ngIf="user.userDetails" class="user-profile-container">
+  <h2>User Profile</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="user.userDetails.name" [disabled]="!isEditMode">
+    </div>
+    <div class="form-group">
+      <label for="position">Position:</label>
+      <input type="text" id="position" name="position" [(ngModel)]="user.userDetails.position" [disabled]="!isEditMode">
+    </div>
+    <div class="form-group">
+      <label for="warehouse">Warehouse:</label>
+      <input type="text" id="warehouse" name="warehouse" [(ngModel)]="user.userDetails.warehouse" [disabled]="!isEditMode">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="user.userDetails.email" [disabled]="!isEditMode">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" [(ngModel)]="user.userDetails.phone" [disabled]="!isEditMode">
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="address" id="address" name="address" [(ngModel)]="user.userDetails.address" [disabled]="!isEditMode">
+      </div>
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input type="text" id="salary" name="salary" [(ngModel)]="user.userDetails.salary" [disabled]="!isEditMode">
+    </div>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="user.loginDetails.username" [disabled]="!isEditMode">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="user.loginDetails.password" [disabled]="!isEditMode">
+    </div>
+    <button *ngIf="!isEditMode" type="button" (click)="toggleEditMode()">Edit</button>
+    <!-- Submit Button -->
+    <button *ngIf="isEditMode" type="submit">Save</button>
+  </form>
+</div>
+
+<div *ngIf="!user.userDetails">
+  <p>{{ errorMessage }}</p>
+</div>

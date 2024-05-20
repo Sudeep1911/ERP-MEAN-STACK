@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="stock-container">
+    <h2>Stock Details</h2>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <div *ngFor="let warehouse of stock">
+      <h3>Warehouse {{ warehouse.warehouse }}</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Price Per Unit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of warehouse.stock">
+            <td>{{ item.itemId }}</td>
+            <td>{{ item.itemName }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.pricePerUnit }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

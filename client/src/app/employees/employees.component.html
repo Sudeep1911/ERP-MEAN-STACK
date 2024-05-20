@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+<div *ngIf="!errorMessage">
+  <h2>Employees</h2>
+  <button class="add-button" (click)="addEmployee()">Add Employee</button>
+  <div *ngIf="showAddForm" class="add-form-popup">
+    <h3>Add Employee</h3>
+    <form (submit)="submitEmployee()">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="newEmployee.name">
+          </div>
+          <div class="form-group">
+            <label for="position">Position:</label>
+            <input type="text" id="position" name="position" [(ngModel)]="newEmployee.position">
+          </div>
+          <div class="form-group">
+            <label for="warehouse">Warehouse:</label>
+            <input type="text" id="warehouse" name="warehouse" [(ngModel)]="newEmployee.warehouse">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="newEmployee.email" >
+          </div>
+          <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input type="text" id="phone" name="phone" [(ngModel)]="newEmployee.phone">
+            </div>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <input type="address" id="address" name="address" [(ngModel)]="newEmployee.address">
+            </div>
+          <div class="form-group">
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary" name="salary" [(ngModel)]="newEmployee.salary">
+          </div>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" [(ngModel)]="newEmployee.username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" [(ngModel)]="newEmployee.password">
+          </div>
+      <!-- Add other fields as needed -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Warehouse</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Salary</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.position }}</td>
+        <td>{{ employee.warehouse }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>{{ employee.address }}</td>
+        <td>{{ employee.salary }}</td>
+        <td><button class="delete-button" (click)="deleteEmployee(employee.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

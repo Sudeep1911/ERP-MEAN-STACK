@@ -1,0 +1,80 @@
+/* Container for the user profile */
+.user-profile-container {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid black; /* Added 'solid' to specify border style */
+    text-align: center;
+} 
+h1{
+    text-align: center;
+}
+  form{
+    padding: 10px;
+  }
+  /* Form group styling */
+  /* Label styling */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Input field styling */
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  .user-profile-container {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    width: 100px; /* Adjust the width as needed */
+    margin-right: 10px;
+  }
+  
+  .form-group input {
+    flex: 1;
+    padding: 5px;
+  }
+  
+  button {
+    display: block;
+    margin: 20px 0;
+    padding: 10px 20px;
+  }
+  
